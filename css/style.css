@@ -6,12 +6,37 @@
  *
  */
 
+ @font-face { font-family: Radikal; font-weight: 100; src: url('../typos/Nootype-RadikalThin.otf'); }
  @font-face { font-family: Radikal; src: url('../typos/Nootype-Radikal.otf'); }
  @font-face { font-family: Radikal; font-weight: bold; src: url('../typos/Nootype-RadikalBold.otf'); }
+ @font-face { font-family: Radikal; font-weight: 900; src: url('../typos/Nootype-RadikalBlack.otf'); }
 
  body {
     font-family: Radikal;
     color: white;
+ }
+
+ section {
+     position: relative;
+     z-index: 2;
+ }
+
+ h1 {
+     text-transform: uppercase;
+     text-align: center;
+     font-size: 3.5em;
+ }
+
+ .font-blue {
+     color: #0087CC !important;
+ }
+
+ .font-gray {
+     color: #414042 !important;
+ }
+
+ .bg-blue {
+     background: #0087CC !important;
  }
 
  .logo {
@@ -23,6 +48,13 @@
  .content-over-fixed {
     z-index: 2;
     position: relative;
+ }
+
+ .divider {
+     height: 4px;
+     background: #A7A9AC;
+     width: 30px;
+     margin: 35px auto;
  }
 
 
@@ -67,23 +99,24 @@ section#one .header {
     text-align: center;
     margin: auto;
     max-width: 1150px;
-    font-size: 1.4em;
+    font-size: 1.6em;
 }
 
 section#one .citation {
     font-weight: bold;
     font-size: 2.5em;
-    padding-top: 2.5em;
+    padding-top: 3em;
     line-height: 1.2em;
     text-align: center;
     display: inline-block;
 }
 
 section#one .citation span {
-    font-weight: normal;
+    font-weight: 100;
     font-size: 0.6em;
     text-align: right;
     float: right;
+    padding-top: 1em;
 }
 
 
@@ -96,10 +129,55 @@ section#one .citation span {
  */
 
 
- section#two {
-     background: white;
-     height: 1000px;
-     margin-top: 50vw;
-     z-index: 2;
-     position: relative;
- }
+section#two {
+    background: white;
+    margin-top: 50vw;
+    text-align: center;
+    padding-bottom: 60px;
+    padding-top: 90px;
+}
+
+section#two .title {
+    font-weight: 900;
+    font-size: 2.2em;
+    line-height: 1.2em;
+}
+
+section#two p {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.6em;
+    max-width: 960px;
+}
+
+
+
+/***
+ *      ___ ___ ___ _____ ___ ___  _  _   _____ _  _ ___ ___ ___
+ *     / __| __/ __|_   _|_ _/ _ \| \| | |_   _| || | _ \ __| __|
+ *     \__ \ _| (__  | |  | | (_) | .` |   | | | __ |   / _|| _|
+ *     |___/___\___| |_| |___\___/|_|\_|   |_| |_||_|_|_\___|___|
+ *
+ */
+
+section#three {
+    background: #E3E4E5;
+    padding-top: 40px;
+}
+
+section#three .ui.grid {
+    padding: 0 2%;
+}
+
+section#three .column {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+section#three .column img {
+    width: 100%;
+}
+
+section#three .column .realisation {
+    padding-bottom: 0.6rem;
+}
