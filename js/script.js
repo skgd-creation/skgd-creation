@@ -5,12 +5,14 @@ $(document).ready(function() {
         bg.css('transform', 'scale(' + (1.1 - ((window.scrollY / (window.innerWidth / 2)) / 10)) + ')')
     })
 
-
+    $('.realisation img').get().forEach(function(element) {
+        var inter = setInterval(function() {
+            if (element.naturalHeight) {
+               clearInterval(inter)
+               $(element).parent().css('max-height', $(element).height() + 'px')
+            }
+        }, 100)
+    }, this);
 
     new WOW().init();
-})
-
-$('.realisation img').on('load', function() {
-    console.log('coucou')
-    $(this).parent().css('max-height', $(this).height() + 'px')
 })
