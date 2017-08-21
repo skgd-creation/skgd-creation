@@ -67,6 +67,14 @@
      margin: 35px auto;
  }
 
+ .header .column {
+     cursor: pointer;
+ }
+
+ .header .column:hover {
+    opacity: .7;
+}
+
 
 
 /***
@@ -182,6 +190,23 @@ section#one .header {
     margin: auto;
     max-width: 1150px;
     font-size: 1.6em;
+}
+
+.header.fixed {
+    position: fixed;
+    top: 200px;
+    transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 1.6em;
+    z-index: 5;
+}
+
+.header.fixed .ui.grid {
+    margin: auto;
+    max-width: 1150px;
 }
 
 section#one .citation {
