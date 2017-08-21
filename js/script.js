@@ -2,7 +2,13 @@ $(document).ready(function() {
 
     var bg = $('section#one .background-fixed')
     $(window).scroll(function() {
-        bg.css('transform', 'scale(' + (1.1 - ((window.scrollY / (window.innerWidth / 2)) / 10)) + ')')
+        var scaleTo = (1.1 - ((window.scrollY / (window.innerWidth / 2)) / 10))
+        bg.css('transform', 'scale(' + scaleTo + ')')
+        if (scaleTo < 1) {
+            bg.css('opacity', 0)
+        } else if (scaleTo >= 1) {
+            bg.css('opacity', scaleTo)
+        }
     })
 
     $('.realisation img').get().forEach(function(element) {
