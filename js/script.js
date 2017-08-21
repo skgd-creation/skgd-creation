@@ -11,6 +11,9 @@ $(document).ready(function() {
         }
     })
 
+    bg.css('opacity', 1)
+    bg.css('transform', 'scale(1.1)')
+
     $('.realisation img').get().forEach(function(element) {
         var inter = setInterval(function() {
             if (element.naturalHeight) {
