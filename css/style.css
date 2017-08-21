@@ -77,6 +77,77 @@
  *
  */
 
+@media screen and (min-aspect-ratio: 2/1) {
+    section#one {
+        height: 42vw !important;
+    }
+    section#two {
+        margin-top: 42vw !important;
+    }
+}
+@media screen and (max-aspect-ratio: 2/1) {
+    section#one {
+        height: 46vw !important;
+    }
+    section#two {
+        margin-top: 46vw !important;
+    }
+}
+
+@media screen and (max-aspect-ratio: 19/10) {
+    section#one {
+        height: 48vw !important;
+    }
+    section#two {
+        margin-top: 48vw !important;
+    }
+}
+
+@media screen and (max-aspect-ratio: 18/10) {
+    section#one {
+        height: 50vw !important;
+    }
+    section#two {
+        margin-top: 50vw !important;
+    }
+}
+
+@media screen and (max-aspect-ratio: 17/10) {
+    section#one {
+        height: 55vw !important;
+    }
+    section#two {
+        margin-top: 55vw !important;
+    }
+}
+
+@media screen and (max-aspect-ratio: 16/10) {
+    section#one {
+        height: 60vw !important;
+    }
+    section#two {
+        margin-top: 60vw !important;
+    }
+}
+
+@media screen and (max-aspect-ratio: 14/10) {
+    section#one {
+        height: 70vw !important;
+    }
+    section#two {
+        margin-top: 70vw !important;
+    }
+}
+
+@media screen and (max-aspect-ratio: 12/10) {
+    section#one {
+        height: 80vw !important;
+    }
+    section#two {
+        margin-top: 80vw !important;
+    }
+}
+
 section#one {
     width: 100%;
     height: 50vw;
@@ -86,6 +157,7 @@ section#one {
     z-index: 1;
     overflow: hidden;
     text-align: center;
+    min-height: 540px;
 }
 
 section#one .background-fixed {
@@ -177,6 +249,8 @@ section#three {
 
 section#three .ui.grid {
     padding: 0 2%;
+    max-width: 1500px;
+    margin: auto;
 }
 
 section#three .column {
