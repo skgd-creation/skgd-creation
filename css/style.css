@@ -7,6 +7,7 @@
  */
 
  @font-face { font-family: Radikal; font-weight: 100; src: url('../typos/Nootype-RadikalThin.otf'); }
+ @font-face { font-family: Radikal; font-weight: 300; src: url('../typos/Nootype-RadikalLight.otf'); }
  @font-face { font-family: Radikal; src: url('../typos/Nootype-Radikal.otf'); }
  @font-face { font-family: Radikal; font-weight: 600; src: url('../typos/Nootype-RadikalMedium.otf'); }
  @font-face { font-family: Radikal; font-weight: bold; src: url('../typos/Nootype-RadikalBold.otf'); }
@@ -196,12 +197,12 @@ section#one .header {
     position: fixed;
     top: 200px;
     transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     opacity: 0;
     text-align: center;
     width: 100%;
     font-size: 1.6em;
     z-index: 5;
+    background: rgba(65, 64, 66, 0.40);
 }
 
 .header.fixed .ui.grid {
@@ -254,6 +255,7 @@ section#two p {
     margin-left: auto;
     margin-right: auto;
     font-size: 1.6em;
+    font-weight: 300;
     max-width: 960px;
 }
 
@@ -299,7 +301,7 @@ section#three .realisation .over {
     right: 10px;
     font-weight: bold;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.7em;
     line-height: 1.5em;
     display: flex;
     align-items: center;

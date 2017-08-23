@@ -15,7 +15,7 @@ $(document).ready(function() {
         if (scaleTo < 1.03) {
             if (!header_status) {
                 header_status = true;
-                $('.header.fixed').css('opacity', 1).css('top', 20)
+                $('.header.fixed').css('opacity', 1).css('top', 0)
             }
         } else if (scaleTo >= 0.95) {
             if (header_status) {
