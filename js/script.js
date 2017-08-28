@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
     var bg = $('section#one .background-fixed')
-    var header_status = false;
+    var header_status = true;
+    var top_section_two = $('section#two').offset().top
+    var top_header = $('section#one .header').offset().top - scrollY
 
     var scale = function() {
         var scaleTo = (1.1 - ((window.scrollY / (window.innerWidth / 2)) / 10))
@@ -12,16 +14,14 @@ $(document).ready(function() {
             bg.css('opacity', scaleTo)
         }
 
-        if (scaleTo < 1.03) {
-            if (!header_status) {
-                header_status = true;
-                $('.header.fixed').css('opacity', 1).css('top', 0)
-            }
-        } else if (scaleTo >= 0.95) {
-            if (header_status) {
-                header_status = false;
-                $('.header.fixed').css('opacity', 0).css('top', 200)
-            }
+        if ((top_section_two - scrollY) <= top_header && !header_status) {
+            header_status = true;
+            $('.header.fixed').css('opacity', 1).css('top', 0)
+            console.log('show header')
+        } else if ((top_section_two - scrollY) > top_header && header_status) {
+            console.log('hide header')
+            header_status = false;
+            $('.header.fixed').css('opacity', 0).css('top', 200)
         }
     }
 
@@ -39,3 +39,9 @@ $(document).ready(function() {
 
     new WOW().init();
 })
+
+window.octoboot_before_save = function(done) {
+    scrollTo(0,0)
+    // let the time to animation finished
+    setTimeout(done, 1000)
+}
