@@ -17,9 +17,7 @@ $(document).ready(function() {
         if ((top_section_two - scrollY) <= top_header && !header_status) {
             header_status = true;
             $('.header.fixed').css('opacity', 1).css('top', 0)
-            console.log('show header')
         } else if ((top_section_two - scrollY) > top_header && header_status) {
-            console.log('hide header')
             header_status = false;
             $('.header.fixed').css('opacity', 0).css('top', 200)
         }
