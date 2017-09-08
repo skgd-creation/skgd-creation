@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     $('.realisation img').get().forEach(function(element) {
         var inter = setInterval(function() {
-            if (element.naturalHeight) {
+            if ($(element).height()) {
                clearInterval(inter)
                $(element).parent().css('max-height', $(element).height() + 'px')
             }
