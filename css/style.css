@@ -376,6 +376,10 @@ section#four .text {
     font-size: 1.2em;
 }
 
+section#four .text p {
+    padding-left: 90px;
+}
+
 
 /***
  *      ___ ___ ___ _____ ___ ___  _  _   ___ _____   _____
