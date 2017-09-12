@@ -169,6 +169,11 @@ section#one {
     min-height: 540px;
 }
 
+section#one.agency {
+    height: 280px !important;
+    min-height: 280px;
+}
+
 section#one .background-fixed {
     width: 100%;
     height: 100%;
@@ -243,6 +248,10 @@ section#two {
     text-align: center;
     padding-bottom: 60px;
     padding-top: 90px;
+}
+
+section#two.agency {
+    margin-top: 280px !important;
 }
 
 section#two .title {
