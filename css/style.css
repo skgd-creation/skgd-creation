@@ -250,10 +250,6 @@ section#two {
     padding-top: 90px;
 }
 
-section#two.agency {
-    margin-top: 280px !important;
-}
-
 section#two .title {
     font-weight: 900;
     font-size: 2.2em;
@@ -266,6 +262,33 @@ section#two p {
     font-size: 1.6em;
     font-weight: 300;
     max-width: 960px;
+}
+
+section#two.agency {
+    margin-top: 280px !important;
+}
+
+section#two.agency .content {
+    margin: auto;
+    max-width: 960px;
+}
+
+section#two.agency h2 {
+    text-align: left;
+    font-size: 2.3em;
+    font-weight: 600;
+}
+
+section#two.agency h2 img {
+    width: 40px;
+    margin-right: 20px;
+}
+
+section#two.agency .divider {
+    margin: 10px 0 30px 0;
+    height: 2px;
+    width: 40px;
+    background: #3b3b3b;
 }
 
 
