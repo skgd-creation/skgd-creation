@@ -42,6 +42,10 @@
      color: #414042 !important;
  }
 
+ .bg-gray {
+    background-color: #414042 !important;
+}
+
  .bg-blue {
      background: #0087CC !important;
  }
@@ -284,14 +288,37 @@ section#two.agency h2 img {
     margin-right: 20px;
 }
 
-section#two.agency .divider {
+section#two.agency:not(.edition) .divider {
     margin: 10px 0 30px 0;
     height: 2px;
     width: 40px;
     background: #3b3b3b;
 }
 
+section#two.edition .ui[class*="two column"].grid>.column:not(.row), .ui[class*="two column"].grid>.row>.column {
+    width: 44%;
+    margin: 6% 6% 0 0;
+}
 
+section#two.edition strong {
+    font-weight: 900;
+}
+
+section#two.edition .divider {
+    height: 2px;
+    width: 15px;
+    margin: 15px auto;
+}
+
+section#two.edition p {
+    font-weight: 100;
+}
+
+section#two.edition .column .text {
+    padding-top: 30px;
+    margin-top: -6px;
+    background: linear-gradient(#e9eaeb, white)
+}
 
 /***
  *      ___ ___ ___ _____ ___ ___  _  _   _____ _  _ ___ ___ ___
