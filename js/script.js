@@ -46,17 +46,18 @@ $(document).ready(function() {
     $('.diapo').each(function() {
         var diapo = $(this)
         var current = 0
-        var max = diapo.find('img').length - 1
 
         diapo.parent().find('.arrow.left').click(function() {
+            var max = diapo.find('img').length - 1
             showRea(diapo, (current = (current - 1 >= 0) ? current - 1 : max))
         })
 
         diapo.parent().find('.arrow.right').click(function() {
+            var max = diapo.find('img').length - 1
             showRea(diapo, (current = (current + 1 <= max) ? current + 1 : 0))
         })
 
-        if (max > 0) {
+        if (diapo.find('img').length > 0) {
             showRea(diapo, current)
         }
     })
