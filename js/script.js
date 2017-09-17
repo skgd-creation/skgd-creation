@@ -35,6 +35,32 @@ $(document).ready(function() {
         }, 100)
     }, this);
 
+    var showRea = function(diapo, nb) {
+        var imgs = diapo.find('img')
+        imgs.each(function(i) {
+            var factor = i - nb
+            $(this).get(0).style.transform = `translateX(${factor * 100}%)`
+        })
+    }
+
+    $('.diapo').each(function() {
+        var diapo = $(this)
+        var current = 0
+        var max = diapo.find('img').length - 1
+
+        diapo.parent().find('.arrow.left').click(function() {
+            showRea(diapo, (current = (current - 1 >= 0) ? current - 1 : max))
+        })
+
+        diapo.parent().find('.arrow.right').click(function() {
+            showRea(diapo, (current = (current + 1 <= max) ? current + 1 : 0))
+        })
+
+        if (max > 0) {
+            showRea(diapo, current)
+        }
+    })
+
     new WOW().init();
 })
 
