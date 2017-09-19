@@ -80,7 +80,23 @@
     opacity: .7;
 }
 
+form input, form textarea {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 300;
+}
 
+form input {
+    height: 40px;
+    border-bottom: 1px solid #a9a9a9;
+}
+
+form textarea {
+    margin-top: 10px;
+}
 
 /***
  *      ___ ___ ___ _____ ___ ___  _  _    ___  _  _ ___
@@ -347,6 +363,13 @@ section#two.edition .diapo img {
     top: 0;
     left: 0;
     transition: transform 0.5s ease-in-out;
+}
+
+section#two form {
+    max-width: 700px;
+    margin: 50px auto;
+    background: linear-gradient(#e4e5e6, white 70%);
+    padding: 10px 25px;
 }
 
 /***
