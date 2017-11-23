@@ -76,6 +76,11 @@
      cursor: pointer;
  }
 
+ .header .column.active div {
+     border-bottom: 2px solid white;
+     display: inline;
+ }
+
  .header .column:hover {
     opacity: .7;
 }
@@ -516,6 +521,18 @@ section#five .infos {
     align-self: flex-start;
     padding-top: 39px;
     padding-left: 30px;
+}
+
+@media (max-width:480px) {
+    section#five {
+        display: block;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    section#five .infos {
+        padding-left: 0px;
+    }
 }
 
 section#five .infos h4 {
