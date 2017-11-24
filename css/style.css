@@ -76,9 +76,11 @@
      cursor: pointer;
  }
 
- .header .column.active div {
-     border-bottom: 2px solid white;
-     display: inline;
+ .header .column.active span {
+    border: 1px solid white;
+    width: 28px;
+    display: block;
+    margin: 8px auto 0 auto;
  }
 
  .header .column:hover {
@@ -298,6 +300,12 @@ section#two.agency .content {
     max-width: 960px;
 }
 
+@media only screen and (max-width:960px) {
+    section#two.agency .content {
+        margin: 0 8%;
+    }
+}
+
 section#two.agency h2 {
     text-align: left;
     font-size: 2.3em;
@@ -484,7 +492,8 @@ section#four h2 {
 
 section#four .ui.grid {
     max-width: 1000px;
-    margin: 50px auto;
+    padding: 50px 0;
+    margin: auto;
 }
 
 section#four .text {
@@ -494,6 +503,12 @@ section#four .text {
 
 section#four .text p {
     padding-left: 90px;
+}
+
+@media only screen and (max-width: 767px) {
+    section#four .text {
+        padding-right: 0px;
+    }
 }
 
 
