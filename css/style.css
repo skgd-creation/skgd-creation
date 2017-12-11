@@ -237,6 +237,12 @@ section#one .header {
     font-size: 1.6em;
 }
 
+@media (max-width: 768px) {
+    section#one .header {
+        display: none;
+    }
+}
+
 .header.fixed {
     position: fixed;
     top: 200px;
@@ -252,6 +258,40 @@ section#one .header {
 .header.fixed .ui.grid {
     margin: auto;
     max-width: 1150px;
+}
+
+.header.mobile {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    padding: 14px;
+    font-weight: 700;
+    font-size: 18px;
+    z-index: 10;
+    box-shadow: 0 0px 7px 0 rgba(0,0,0,0.3);
+}
+
+.header.mobile i {
+    position: absolute;
+    top: 13px;
+    right: 5px;
+}
+
+@media (max-width: 768px) {
+    .header.mobile {
+        display: block;
+    }
+    .header.fixed {
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 0px 7px 0 rgba(0,0,0,0.3);
+        font-size: 1.2em;
+        color: #0087CC !important;
+    }
 }
 
 section#one .citation {

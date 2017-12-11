@@ -1,13 +1,16 @@
 $(document).ready(function() {
 
     var bg = $('section#one .background-fixed')
-    var header_status = true;
+    var header_status = !!(innerWidth > 768);
     var top_section_two = $('section#two').offset().top
     var top_header = $('section#one .header').offset().top - scrollY
 
     var scale = function() {
+        if (innerWidth <= 768) return
+
         var scaleTo = (1.1 - ((window.scrollY / (window.innerWidth / 2)) / 10))
         bg.css('transform', 'scale(' + scaleTo + ')')
+
         if (scaleTo < 1) {
             bg.css('opacity', 0)
         } else if (scaleTo >= 1) {
@@ -22,6 +25,26 @@ $(document).ready(function() {
             $('.header.fixed').css('opacity', 0).css('top', 200)
         }
     }
+
+    var toggleMobileMenu = function() {
+        $('.header.fixed').css('opacity', header_status ? 0 : 1).css('top',
+            header_status ? innerHeight : $('.header.mobile').get(0).getBoundingClientRect().bottom
+        )
+
+        $('.header.mobile i')
+            .removeClass(!header_status ? 'sidebar' : 'remove')
+            .addClass(!header_status ? 'remove' : 'sidebar')
+
+        header_status = !header_status
+    }
+
+    if (!header_status) {
+        header_status = true
+        toggleMobileMenu()
+        header_status = false
+    }
+
+    $('.header.mobile').click(toggleMobileMenu)
 
     $(window).scroll(scale)
     scale()
