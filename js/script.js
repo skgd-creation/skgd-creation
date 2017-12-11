@@ -22,7 +22,7 @@ $(document).ready(function() {
             $('.header.fixed').css('opacity', 1).css('top', 0)
         } else if ((top_section_two - scrollY) > top_header && header_status) {
             header_status = false;
-            $('.header.fixed').css('opacity', 0).css('top', 200)
+            $('.header.fixed').css('opacity', 0).css('top', innerHeight)
         }
     }
 
