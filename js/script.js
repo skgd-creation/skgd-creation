@@ -26,17 +26,33 @@ $(document).ready(function() {
     $(window).scroll(scale)
     scale()
 
-    $('.realisation img').get().forEach(function(element) {
-        var inter = setInterval(function() {
-            if ($(element).height()) {
-               clearInterval(inter)
-               $(element).parent().css('max-height', $(element).height() + 'px')
-            }
-        }, 100)
-    }, this);
+    var initRea = function(diapo) {
+        var minus
+        var total = 0
+        diapo.find('img:not(.no-absolute)').get().forEach(function (element) {
+            total++
+            var inter = setInterval(function () {
+                let h = $(element).height()
+                if (h) {
+                    clearInterval(inter)
+                    total--
+                    $(element).parent().css('max-height', h + 'px')
+                    if (!minus || minus.height > h) {
+                        minus = {
+                            height: h,
+                            dom: $(element)
+                        }
+                    }
+                    if (total === 0) {
+                        diapo.append(minus.dom.clone().addClass('no-absolute'))
+                    }
+                }
+            }, 100)
+        }, this)
+    }
 
     var showRea = function(diapo, nb) {
-        var imgs = diapo.find('img')
+        var imgs = diapo.find('img:not(.no-absolute)')
         imgs.each(function(i) {
             var factor = i - nb
             $(this).get(0).style.transform = `translateX(${factor * 100}%)`
@@ -48,16 +64,17 @@ $(document).ready(function() {
         var current = 0
 
         diapo.parent().find('.arrow.left').click(function() {
-            var max = diapo.find('img').length - 1
+            var max = diapo.find('img:not(.no-absolute)').length - 1
             showRea(diapo, (current = (current - 1 >= 0) ? current - 1 : max))
         })
 
         diapo.parent().find('.arrow.right').click(function() {
-            var max = diapo.find('img').length - 1
+            var max = diapo.find('img:not(.no-absolute)').length - 1
             showRea(diapo, (current = (current + 1 <= max) ? current + 1 : 0))
         })
 
-        if (diapo.find('img').length > 0) {
+        if (diapo.find('img:not(.no-absolute)').length > 0) {
+            initRea(diapo)
             showRea(diapo, current)
         }
     })
