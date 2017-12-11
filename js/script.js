@@ -86,5 +86,5 @@ window.octoboot_before_save = function(done) {
     scrollTo(0,0)
     $('img.no-absolute').remove()
     // let the time to animation finished
-    setTimeout(done, 100)
+    setTimeout(done, 1000)
 }
