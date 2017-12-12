@@ -78,7 +78,8 @@ $(document).ready(function() {
         var imgs = diapo.find('img:not(.no-absolute)')
         imgs.each(function(i) {
             var factor = i - nb
-            $(this).get(0).style.transform = `translateX(${factor * 100}%)`
+            var value = factor * 100
+            $(this).get(0).style.transform = `translateX(${value ? value + 1 : value}%)`
         })
     }
 
