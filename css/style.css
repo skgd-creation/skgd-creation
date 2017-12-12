@@ -34,6 +34,10 @@
      font-family: Radikal;
  }
 
+ a, a:hover {
+    color: white;
+ }
+
  .font-blue {
      color: #0087CC !important;
  }
@@ -290,6 +294,8 @@ section#one .header {
         background: rgba(255, 255, 255, 0.8);
         box-shadow: 0 0px 7px 0 rgba(0,0,0,0.3);
         font-size: 1.2em;
+    }
+    .header.fixed a {
         color: #0087CC !important;
     }
 }
