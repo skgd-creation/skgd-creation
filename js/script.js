@@ -115,7 +115,7 @@ $(document).ready(function() {
         $alert.removeClass('alert-danger alert-success');
         $alert.html('');
 
-        if (!$el.find('input#name').val() || !$el.find('input#email').val() || !$el.find('textarea#comments').val()) {
+        if (!$el.find('input#nom').val() || !$el.find('input#email').val() || !$el.find('textarea#comments').val()) {
             $alert.html('Tout les champs sont requis');
             $alert.addClass('alert-danger').fadeIn(500);
             return
