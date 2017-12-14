@@ -56,7 +56,7 @@ $(document).ready(function() {
             total++
             var inter = setInterval(function () {
                 let h = $(element).height()
-                if (h) {
+                if (h && element.naturalWidth) {
                     clearInterval(inter)
                     total--
                     $(element).parent().css('max-height', h + 'px')
