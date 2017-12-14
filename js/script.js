@@ -109,6 +109,7 @@ $(document).ready(function() {
 window.octoboot_before_save = function(done) {
     scrollTo(0,0)
     $('img.no-absolute').remove()
+    $('.g-recaptcha').html('')
     // let the time to animation finished
     setTimeout(done, 1000)
 }
