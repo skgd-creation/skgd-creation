@@ -106,12 +106,11 @@ $(document).ready(function() {
     new WOW().init();
 
     // FORM
-    $('#contactform').on('submit', function (e) {
-        e.preventDefault();
-        var $el = $(this),
+    $('form #send').click(function (e) {
+        var $el = $(this).parents('form'),
             $alert = $el.find('.form-validation'),
-            $submit = $el.find('#submit'),
-            action = $el.attr('action');
+            $submit = $(this),
+            action = $el.data('action');
         $alert.removeClass('alert-danger alert-success');
         $alert.html('');
 
@@ -120,6 +119,9 @@ $(document).ready(function() {
             $alert.addClass('alert-danger').fadeIn(500);
             return
         }
+
+        $submit
+            .after('<img src="../images/assets/contact-form-loader.gif" class="loader" />')
 
         $.ajax({
             type: 'POST',
@@ -134,6 +136,7 @@ $(document).ready(function() {
                     $el.trigger('reset');
                     $alert.html('Success!');
                     $alert.addClass('alert-success').fadeIn(500);
+                    $('form img.loader').fadeOut('slow', function () { $(this).remove() });
                 }
             },
         })
