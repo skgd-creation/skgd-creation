@@ -104,6 +104,40 @@ $(document).ready(function() {
     })
 
     new WOW().init();
+
+    // FORM
+    $('#contactform').on('submit', function (e) {
+        e.preventDefault();
+        var $el = $(this),
+            $alert = $el.find('.form-validation'),
+            $submit = $el.find('#submit'),
+            action = $el.attr('action');
+        $alert.removeClass('alert-danger alert-success');
+        $alert.html('');
+
+        if (!$el.find('input#name').val() || !$el.find('input#email').val() || !$el.find('textarea#comments').val()) {
+            $alert.html('Tout les champs sont requis');
+            $alert.addClass('alert-danger').fadeIn(500);
+            return
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: action,
+            data: $el.serialize(),
+            success: function (response) {
+                if (response.status == 'error') {
+                    $alert.html('Error!');
+                    $alert.addClass('alert-danger').fadeIn(500);
+                }
+                else {
+                    $el.trigger('reset');
+                    $alert.html('Success!');
+                    $alert.addClass('alert-success').fadeIn(500);
+                }
+            },
+        })
+    })
 })
 
 window.octoboot_before_save = function(done) {
