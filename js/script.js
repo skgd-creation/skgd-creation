@@ -147,6 +147,10 @@ window.octoboot_before_save = function(done) {
     scrollTo(0,0)
     $('img.no-absolute').remove()
     $('.g-recaptcha').html('')
+    $('script[src*="gstatic.com/recaptcha"]').remove()
+    $('script[src*="google-analytics.com/analytics.js"]').remove()
+    $('.g-recaptcha-bubble-arrow').parent().remove()
+    $('iframe[src*="www.google.com/recaptcha/api2/bframe"]').parent().parent().remove()
     // let the time to animation finished
     setTimeout(done, 1000)
 }
